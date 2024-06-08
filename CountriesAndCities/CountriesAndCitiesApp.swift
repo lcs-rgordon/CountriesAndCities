@@ -11,7 +11,7 @@ import SwiftUI
 struct CountriesAndCitiesApp: App {
     var body: some Scene {
         WindowGroup {
-            CountriesListView()
+            LandingView()
         }
     }
 }
