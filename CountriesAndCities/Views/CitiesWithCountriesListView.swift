@@ -8,25 +8,18 @@
 import SwiftUI
 
 struct CitiesWithCountriesListView: View {
+    
+    // MARK: Stored proeprties
+    @State private var viewModel = CitiesWithCountriesListViewModel()
+    
+    // MARK: Computed properties
     var body: some View {
         NavigationStack {
-            List {
+            List(viewModel.cities) { city in
                 VStack(alignment: .leading) {
-                    Text("Beijing")
+                    Text(city.name)
                         .bold()
-                    Text("China")
-                        .font(.subheadline)
-                }
-                VStack(alignment: .leading) {
-                    Text("Berlin")
-                        .bold()
-                    Text("Germany")
-                        .font(.subheadline)
-                }
-                VStack(alignment: .leading) {
-                    Text("Boston")
-                        .bold()
-                    Text("United States")
+                    Text(city.country.name)
                         .font(.subheadline)
                 }
             }

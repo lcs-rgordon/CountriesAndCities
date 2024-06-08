@@ -28,7 +28,8 @@ class CitiesWithCountriesListViewModel: Observable {
             let results: [CityCountry] = try await supabase
                 .from("city")
                 .select("id, name, country(id, name)")  // Joins with the country table
-                .execute()                              // Supabase automatically handles the join details
+                .order("name", ascending: true)         // Supabase automatically handles the join details
+                .execute()
                 .value
             
             self.cities = results
