@@ -16,10 +16,10 @@ struct CountriesListView: View {
     var body: some View {
         NavigationStack {
             List(viewModel.countriesWithCities) { country in
-                VStack(alignment: .leading) {
+                NavigationLink {
+                    CitiesListView(country: country)
+                } label: {
                     Text(country.name)
-                        .bold()
-                    Text("Total number of cities: \(country.cities.count)")
                 }
             }
             .navigationTitle("Countries")
