@@ -18,6 +18,7 @@ struct CountriesListView: View {
             List(viewModel.countriesWithCities) { country in
                 NavigationLink {
                     CitiesListView(country: country)
+                        .environment(viewModel)
                 } label: {
                     Text(country.name)
                 }
