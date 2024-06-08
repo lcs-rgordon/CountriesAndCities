@@ -61,4 +61,29 @@ class CountriesListViewModel: Observable {
         
     }
     
+    func add(city: String, in country: CountryCity) {
+            
+            Task {
+                // Make a new city instance
+                let newCity = City(name: city, countryId: country.id)
+                
+                do {
+                    // Add the new city
+                    try await supabase
+                        .from("city")
+                        .insert(newCity)
+                        .execute()
+                    
+                    // Refresh the list of countries with cities
+                    try await self.getCountriesWithCities()
+                    
+                } catch {
+                    
+                    debugPrint(error)
+                    
+                }
+            }
+            
+        }
+    
 }
