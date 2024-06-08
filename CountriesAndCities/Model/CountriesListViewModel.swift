@@ -12,6 +12,7 @@ class CountriesListViewModel: Observable {
     
     // MARK: Stored properties
     var countries: [Country] = []
+    var countriesWithCities: [CountryCity] = []
     
     // MARK: Intializer(s)
     init() {
@@ -19,9 +20,30 @@ class CountriesListViewModel: Observable {
         Task {
             try await getCountries()
         }
+        // Get countries with cities from the database
+        Task {
+            try await getCountriesWithCities()
+        }
     }
     
     // MARK: Function(s)
+    func getCountriesWithCities() async throws {
+        
+        do {
+            let results: [CountryCity] = try await supabase
+                .from("country")
+                .select("id, name, city(id, name)")
+                .execute()
+                .value
+            
+            self.countriesWithCities = results
+            
+        } catch {
+            debugPrint(error)
+        }
+        
+    }
+    
     func getCountries() async throws {
                 
         do {
