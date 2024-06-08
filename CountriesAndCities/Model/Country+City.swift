@@ -15,6 +15,13 @@ struct CountryCity: Identifiable, Codable {
     let name: String
     let cities: [City]  // Holds all the cities for this country
     
+    // Help Swift decode information sent from Supabase
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case cities = "city"  // Load information sent in "city" key into the "cities" array
+    }
+    
     // Embedding the City structure inside the CountryCity structure
     // mimics the one-to-many relationship between a country and it's cities
     struct City: Identifiable, Codable {

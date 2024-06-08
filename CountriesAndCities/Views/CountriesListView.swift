@@ -15,8 +15,12 @@ struct CountriesListView: View {
     // MARK: Computed properties
     var body: some View {
         NavigationStack {
-            List(viewModel.countries) { country in
-                Text(country.name)
+            List(viewModel.countriesWithCities) { country in
+                VStack(alignment: .leading) {
+                    Text(country.name)
+                        .bold()
+                    Text("Total number of cities: \(country.cities.count)")
+                }
             }
             .navigationTitle("Countries")
         }
