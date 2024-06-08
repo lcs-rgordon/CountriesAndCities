@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct CountriesListView: View {
+    
+    // MARK: Stored proeprties
+    @State private var viewModel = CountriesListViewModel()
+    
+    // MARK: Computed properties
     var body: some View {
         NavigationStack {
-            List {
-                Text("Canada")
-                Text("Mexico")
+            List(viewModel.countries) { country in
+                Text(country.name)
             }
             .navigationTitle("Countries")
         }
