@@ -20,6 +20,7 @@
 		816F87D22C14C8E10061C5C2 /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F87D12C14C8E10061C5C2 /* CountriesListView.swift */; };
 		816F87D72C14C9EC0061C5C2 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F87D62C14C9EC0061C5C2 /* Country.swift */; };
 		816F87D92C14CACE0061C5C2 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F87D82C14CACE0061C5C2 /* CountriesListViewModel.swift */; };
+		816F87DB2C14CFAE0061C5C2 /* Country+City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F87DA2C14CFAE0061C5C2 /* Country+City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		816F87D12C14C8E10061C5C2 /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
 		816F87D62C14C9EC0061C5C2 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		816F87D82C14CACE0061C5C2 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountriesListViewModel.swift; path = CountriesAndCities/Model/CountriesListViewModel.swift; sourceTree = SOURCE_ROOT; };
+		816F87DA2C14CFAE0061C5C2 /* Country+City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+City.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				816F87D62C14C9EC0061C5C2 /* Country.swift */,
+				816F87DA2C14CFAE0061C5C2 /* Country+City.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				816F87D92C14CACE0061C5C2 /* CountriesListViewModel.swift in Sources */,
+				816F87DB2C14CFAE0061C5C2 /* Country+City.swift in Sources */,
 				816F87D72C14C9EC0061C5C2 /* Country.swift in Sources */,
 				816F87C32C14C6B20061C5C2 /* Supabase.swift in Sources */,
 				816F87D22C14C8E10061C5C2 /* CountriesListView.swift in Sources */,
